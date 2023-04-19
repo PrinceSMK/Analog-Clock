@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analog Clock</title>
+    <link rel="stylesheet" href="clock.css">
+</head>
+<body>
+
+    <script>
+        alert("Welcome to Analog Clock")
+
+
+setInterval(() => {
+    d = new Date();
+    dateh = d.getHours();
+    datem = d.getMinutes();
+    datess = d.getSeconds();
+
+    hrotation = 30*dateh + datem/2;
+    mrotation = 6*datem;
+    srotation = 6*datess;
+
+    hour.style.transform = `rotate(${hrotation}deg)`
+    mint.style.transform = `rotate(${mrotation}deg)`
+    sec.style.transform = `rotate(${srotation}deg)`
+
+}, 1000);
+    </script>
+
+
+    <style>
+
+#clock{
+    margin: auto;
+    height: 40vw;
+    width: 40vw;
+    background: url(clock.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+}
+
+#hour{
+    position: absolute;
+    background-color: aliceblue;
+    border-radius: 2%;
+    width: 1.5%;
+    height: 23%;
+    margin-top: 27%;
+    margin-left: 49.45%;
+    border-radius: 30% 30% 0% 0%;
+    transform-origin: bottom;
+
+
+}
+#mint{
+    position: absolute;
+    background-color: aliceblue;
+    border-radius: 2%;
+    width: 1.3%;
+    height: 31%;
+    margin-top: 19%;
+    margin-left: 49.45%;
+    border-radius: 30% 30% 0% 0%;
+    transform-origin: bottom;
+
+}
+#sec{
+    position: absolute;
+    background-color: red;
+    border-radius: 2%;
+    width: 1%;
+    height: 31%;
+    margin-top: 19%;
+    margin-left: 49.45%;
+    border-radius: 30% 30% 0% 0%;
+    transform-origin: bottom;
+
+
+}
+    </style>
+
+
+    <div id="clock">
+
+        <div id="dot"></div>
+
+        <div id="hour"></div>
+        <div id="mint"></div>
+        <div id="sec"></div>
+
+
+
+    </div>
+    
+
+
+
+    <script src="clock.js"></script>
+
+
+
+</body>
+</html>
